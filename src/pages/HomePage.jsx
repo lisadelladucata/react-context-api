@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Form from "../components/Form";
 import Character from "../components/Character";
+import { useSearchContext } from "../contexts/SearchContext";
+import { useAlertContext } from "../contexts/AlertContext";
+
 const initialFormData = {
   name: "",
   race: "",
@@ -13,6 +16,7 @@ const initialFormData = {
 export default function HomePages() {
   const [characters, setCharacters] = useState([]);
   const [formData, setFormData] = useState(initialFormData);
+  const { search } = useSearchContext();
 
   const handleFormField = (value, fieldName) => {
     setFormData((currentState) => ({
@@ -49,21 +53,37 @@ export default function HomePages() {
 
   useEffect(fetchPosts, []);
 
+  const filtredCard = characters.filter((character) => {
+    return character.name.toLowerCase().includes(search.toLowerCase());
+  });
+
+  const { setAlertData } = useAlertContext();
+  useEffect(() => {
+    setAlertData({
+      type: "info-class",
+      message: "Rimani sempre aggiornato!",
+    });
+  }, [setAlertData]);
+
   return (
     <>
       <div className="container">
         <div className="card">
-          {characters.map((character) => {
-            return (
-              <>
-                <Character
-                  key={character.id}
-                  character={character}
-                  handleDelete={handleDelete}
-                />
-              </>
-            );
-          })}
+          {filtredCard.length ? (
+            filtredCard.map((character) => {
+              return (
+                <>
+                  <Character
+                    key={character.id}
+                    character={character}
+                    handleDelete={handleDelete}
+                  />
+                </>
+              );
+            })
+          ) : (
+            <h2>Not found</h2>
+          )}
         </div>
         <div className="form">
           <Form

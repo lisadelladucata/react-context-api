@@ -1,5 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { useSearchContext } from "../contexts/SearchContext";
 export default function Header() {
+  const { search, setSearch } = useSearchContext();
   return (
     <>
       <header>
@@ -20,6 +23,14 @@ export default function Header() {
             </li>
             <li>
               <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+              <input
+                type="searc"
+                placeholder="Cerca..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </li>
           </ul>
         </nav>

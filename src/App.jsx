@@ -13,27 +13,33 @@ import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/admin/Login";
 import Index from "./pages/admin/Index";
 import SingleCard from "./pages/SingleCard";
+
+//context
+import { AlertProvider } from "./contexts/AlertContext";
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route path="/" element={<HomePages />} />
-          <Route path="/characters/:id" element={<SingleCard />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Route>
+    <AlertProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route path="/" element={<HomePages />} />
+            <Route path="/characters/:id" element={<SingleCard />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Route>
 
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
+          <Route element={<AuthLayout />}>
+            <Route path="/login" element={<Login />} />
+          </Route>
 
-        <Route path="/admin" element={<DashboardLayout />}>
-          <Route index element={<Index />} />
-        </Route>
+          <Route path="/admin" element={<DashboardLayout />}>
+            <Route index element={<Index />} />
+          </Route>
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </AlertProvider>
   );
 }

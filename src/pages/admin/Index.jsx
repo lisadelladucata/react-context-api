@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   return (
@@ -8,6 +9,7 @@ export default function Dashboard() {
         <ul className="sidebar-list">
           <li className="sidebar-item">Home</li>
           <li className="sidebar-item">New card</li>
+          <Link to="/">← Torna alla Homepage</Link>
         </ul>
       </div>
 
