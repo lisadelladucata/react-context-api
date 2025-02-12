@@ -1,0 +1,271 @@
+/*********
+RESET
+*********/
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+}
+
+/*********
+GENERAL
+*********/
+body {
+  font-family: "Open Sans", serif;
+  background-color: #303030;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*********
+HEADER
+*********/
+header img {
+  width: 200px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+header li {
+  list-style: none;
+  font-size: 20px;
+}
+
+header a {
+  color: orange;
+  text-decoration: none;
+}
+/*********
+CARDS
+*********/
+.card {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.character {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  width: calc(100% / 3);
+  flex-grow: 1;
+  padding: 20px;
+  background-color: orange;
+}
+
+.character img {
+  max-width: 200px;
+  height: 200px;
+}
+
+.character a {
+  text-decoration: none;
+  color: #000;
+}
+
+.delete-btn button {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.form {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  background-color: orange;
+  padding: 10px;
+}
+
+.form div {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px #303030 solid;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #000;
+  margin: 4px;
+}
+
+/*********
+ABOUT US
+*********/
+
+.about-us p,
+ul {
+  font-size: 18px;
+}
+
+.about-us {
+  background-color: orange;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.about-us ul {
+  list-style: none;
+}
+
+/*********
+CONTACTS
+*********/
+.contact-form {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.contact-form div {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.contact-form button {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px #303030 solid;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #000;
+  margin: 7px;
+}
+
+.contacts {
+  text-align: center;
+  background-color: orange;
+  border-radius: 20px;
+}
+
+.message-thank-u {
+  padding: 5px;
+  font-size: 18px;
+}
+
+/*********
+FOOTER
+*********/
+footer {
+  padding: 10px;
+  margin-top: 40px;
+  text-align: center;
+  background-color: orange;
+}
+
+/*********
+SINGLE CARD
+*********/
+.single-character {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  background-color: orange;
+}
+
+.single-character img {
+  max-width: 400px;
+  height: 400px;
+}
+
+/*********
+DASHBOARD
+*********/
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: orange;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar-list {
+  list-style-type: none;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f6f8;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.dash-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dash-card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 40%;
+}
+
+.stat-card h3 {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
